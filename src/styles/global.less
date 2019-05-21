@@ -1,0 +1,640 @@
+//variables
+@body-bg: #ffffff;
+@container-bg: #e9f4fb;
+@text-color: #292a2c;
+@gray-color: #666666;
+@font-size: 22px;
+@career-size: 14px;
+@career-line-height: 20px;
+@line-height: 46px;
+@h1-color: #ffffff;
+@h2-size: 56px;
+@h1-size: @h2-size;
+@h2-line-height: normal;
+@h3-size: 30px;
+@h4-size: 30px;
+@h3-job-size: 30px;
+@h3-job-line-height: 46px;
+@h3-job-hover-color: #ffffff;
+@top-image-color: @h1-color;
+@career-header-bg: #d8e4ec;
+@economia-blue-color: #073259;
+@arrow-color: #7c96a6;
+
+.gradient-default {
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+}
+
+.gradient-header {
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+}
+
+.containers-params {
+  margin: 0 -37px;
+  padding: 4px 37px 0;
+}
+
+.orange {
+  color: #d69e3f;
+}
+
+.blue {
+  color: #007bff;
+}
+
+.violett {
+  color: #7580b2;
+}
+
+//classes
+html,
+body {
+  background-color: @body-bg;
+  font: @font-size / @line-height 'Prompt', sans-serif;
+  font-weight: 300;
+  color: @text-color;
+  margin: 0;
+}
+
+img {
+  border: 0;
+  width: 100%;
+  height: auto;
+  margin: 60px 0 80px;
+}
+
+img.script-image {
+  width: 30%;
+  max-width: 30% !important;
+  height: auto;
+  margin: 0 0 30px 30px;
+  float: right;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  position: relative;
+  padding-left: 30px;
+  &::before {
+    content: ' ';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: @economia-blue-color;
+    border-radius: 5px;
+    position: absolute;
+    left: 0px;
+    top: 16px;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+    p {
+      text-decoration: none !important;
+    }
+  }
+  &.career-link {
+    color: @economia-blue-color;
+    font-size: @h2-size;
+    text-align: center;
+    display: block;
+    margin: 0 -37px;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    .react-parallax {
+      div {
+        padding: 70px 0;
+      }
+    }
+  }
+  &.home-link,
+  &.header-link-blue {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &.header-link-blue {
+    color: @economia-blue-color;
+  }
+}
+a.job-item {
+  text-decoration: none;
+  h3 {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  &:hover {
+    text-decoration: none;
+    h3 {
+      background-color: @economia-blue-color;
+      color: @h3-job-hover-color;
+    }
+  }
+}
+
+h1 {
+  font-size: @h1-size;
+  line-height: normal !important;
+  color: @h1-color;
+  padding: 180px 35px 15px;
+  margin-bottom: 0px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: right;
+  .gradient-default;
+}
+
+h2 {
+  font-size: @h2-size;
+  line-height: @h2-line-height;
+}
+
+h3 {
+  font-size: @h3-size;
+  line-height: normal;
+}
+
+h3.job-header {
+  font-size: @h3-job-size;
+  line-height: @h3-job-line-height;
+  background: @career-header-bg;
+  margin: 0 -37px;
+  padding: 15px 37px;
+}
+
+h4 {
+  text-align: center;
+  font-size: @h4-size;
+  font-weight: normal;
+}
+
+.arrows-year {
+  display: inline-block;
+  span {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .arrow-next,
+  .arrow-back {
+    margin-top: -5px;
+    width: 0;
+    height: 0;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  .arrow-next {
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid @arrow-color;
+    margin-left: 15px;
+    &:hover {
+      border-left-color: @text-color;
+    }
+  }
+  .arrow-back {
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid @arrow-color;
+    margin-right: 15px;
+    &:hover {
+      border-right-color: @text-color;
+    }
+  }
+}
+
+.avatar-flex {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  line-height: 36px;
+  padding: 30px 0;
+}
+
+.avatar-flex-image {
+  p {
+    font-weight: bold;
+    text-align: center;
+    line-height: 36px;
+    margin: 0;
+    padding: 0;
+  }
+  img {
+    margin: 0 0 10px;
+    width: 200px;
+    height: auto;
+    display: block;
+    border-radius: 100px;
+  }
+}
+
+.hp-left-image {
+  margin-right: 76px;
+}
+
+.hp-right-image {
+  margin-left: 76px;
+}
+
+.career-date {
+  font-size: @career-size;
+  margin-bottom: -20px;
+}
+
+.container {
+  background-color: @container-bg;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container-white {
+  background: @body-bg;
+  .containers-params;
+  padding-bottom: 30px;
+}
+
+.statistics-flex,
+.images-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.social-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+  .social-item {
+    text-align: center;
+    text-decoration: none;
+    color: @economia-blue-color;
+    width: 220px;
+    padding: 40px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  img {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+  }
+}
+
+.congress-images-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .avatar-flex-image {
+    margin: 0px 10px 30px;
+  }
+}
+
+.image-item {
+  margin: 10px;
+  position: relative;
+  text-align: center;
+  color: @h1-color;
+  overflow: hidden;
+  cursor: pointer;
+  img {
+    margin: 0px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+}
+
+.image-item {
+  &:hover {
+    img {
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+    }
+  }
+}
+
+.images-text {
+  position: absolute;
+  left: 0;
+  bottom: 17px;
+  .gradient-default;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 10px 0;
+}
+
+.statistics-item {
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  p {
+    color: @gray-color;
+    font-weight: bold;
+  }
+}
+
+.graph-item {
+  padding: 10px;
+  width: 190px;
+  text-align: center;
+}
+
+.container-bg {
+  .containers-params;
+  padding-top: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  .react-parallax {
+    margin: 0px -37px;
+    padding: 0px 37px 40px;
+  }
+}
+
+header {
+  padding: 25px 37px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer {
+  padding: 50px 37px;
+}
+
+.menu {
+  margin-right: -10px;
+  a {
+    padding: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.mobileButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  background: @economia-blue-color;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  cursor: pointer;
+  display: none;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    background: #ffffff;
+    top: 8px;
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    background: #ffffff;
+    bottom: 8px;
+  }
+}
+
+.header-links {
+  .gradient-header;
+  padding: 1px 0;
+  overflow: auto;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.home-link,
+.header-date {
+  display: block;
+  color: @top-image-color;
+  float: left;
+  padding: 0px 37px;
+  margin: 0px;
+}
+
+.header-date {
+  float: right;
+}
+
+.header-image-holder {
+  overflow: hidden;
+  margin: 0 -37px;
+}
+
+.header-image-content {
+  position: relative;
+  padding-top: 40%;
+}
+
+.content {
+  flex: 1 0 auto;
+  padding: 0px 37px;
+}
+
+.content-holder {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1080px;
+  padding-bottom: 40px;
+}
+
+.job-blok {
+  padding: 80px 0;
+
+  .item {
+    display: block;
+  }
+}
+
+.job-offer {
+  img {
+    max-width: 180px;
+  }
+}
+
+header {
+  background: @body-bg;
+}
+
+footer {
+  align-items: center;
+  background: @body-bg;
+  display: flex;
+  p {
+    margin-left: 3em;
+  }
+  .content-holder {
+    display: flex;
+  }
+}
+
+.logo {
+  margin: 0;
+  width: 100%;
+  max-width: 199px;
+  height: auto;
+}
+
+.logo-bottom {
+  margin: 0;
+  width: 205px;
+  height: 160px;
+}
+
+footer p {
+  line-height: 30px;
+}
+
+#lightboxBackdrop {
+  img {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  h1 {
+    font-size: 35px;
+    line-height: normal;
+    bottom: -20px !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .header-image-holder {
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+  header {
+    display: block;
+    .menu {
+      a {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid #eeeeee;
+      }
+    }
+  }
+  &.closed {
+    .menu {
+      display: none;
+    }
+  }
+  .mobileButton {
+    display: block;
+  }
+  #lightboxBackdrop {
+    button {
+      background: rgba(0, 0, 0, 0.6);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  img {
+    margin: 30px 0 40px;
+  }
+
+  h1 {
+    font-size: (@h1-size) - 10;
+  }
+
+  h2 {
+    font-size: (@h2-size) - 15;
+  }
+
+  h3 {
+    font-size: (@h3-size) - 10;
+  }
+
+  a {
+    &.career-link {
+      font-size: (@h2-size) - 15;
+      line-height: normal;
+    }
+  }
+
+  .header-date {
+    float: none;
+    clear: both;
+  }
+
+  footer {
+    .content-holder {
+      display: block;
+      p {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .avatar-flex-image {
+    margin: 40px auto 25px;
+    width: 200px;
+    order: -1;
+  }
+
+  .avatar-flex {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h1,
+  h2 {
+    font-size: 32px;
+  }
+  .social-item {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

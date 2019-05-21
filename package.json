@@ -1,0 +1,82 @@
+{
+  "name": "ecodevs-presentation-website",
+  "private": true,
+  "description": "Website of ecodevs! The only ecological developers on earth!",
+  "version": "0.1.0",
+  "author": "TODO: Vyplnit",
+  "bugs": {
+    "url": "TODO: Vyplnit"
+  },
+  "dependencies": {
+    "@types/react-circular-progressbar": "^1.0.1",
+    "gatsby": "^2.1.34",
+    "gatsby-image": "^2.0.29",
+    "gatsby-plugin-copy-files": "^1.0.1",
+    "gatsby-plugin-google-analytics": "^2.0.13",
+    "gatsby-plugin-less": "^2.0.11",
+    "gatsby-plugin-offline": "^2.0.22",
+    "gatsby-plugin-react-helmet": "^3.0.6",
+    "gatsby-plugin-sharp": "^2.0.20",
+    "gatsby-plugin-typescript": "^2.0.6",
+    "gatsby-remark-component": "^1.1.3",
+    "gatsby-source-filesystem": "^2.0.20",
+    "gatsby-transformer-remark": "^2.2.3",
+    "gatsby-transformer-sharp": "^2.1.13",
+    "less": "^3.9.0",
+    "lightbox-react": "^0.3.7",
+    "react": "^16.7.0",
+    "react-anchor-link-smooth-scroll": "^1.0.11",
+    "react-circular-progressbar": "^1.0.0",
+    "react-dom": "^16.7.0",
+    "react-grid-gallery": "^0.5.4",
+    "react-helmet": "^5.2.0",
+    "react-parallax": "^2.2.0",
+    "rehype-react": "^3.1.0",
+    "typeface-merriweather": "0.0.54",
+    "typeface-montserrat": "0.0.54",
+    "typescript": "^3.3.1"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "prettier": "prettier \"**/*.{js,jsx,ts,tsx,json,less}\"",
+    "format": "npm run prettier -- --write",
+    "test": "tsc --noEmit",
+    "typesgen": "gql-gen --schema http://localhost:8000/___graphql  --template graphql-codegen-typescript-template --out ./src/types/graphql.d.ts \"./src/**/*.graphql\""
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.21",
+    "@types/react": "^16.8.1",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-helmet": "^5.0.8",
+    "@typescript-eslint/eslint-plugin": "^1.2.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
+    "graphql-code-generator": "^0.16.1",
+    "graphql-codegen-typescript-template": "^0.16.1",
+    "husky": "^2.2.0",
+    "lint-staged": "^8.1.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{json,less}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
